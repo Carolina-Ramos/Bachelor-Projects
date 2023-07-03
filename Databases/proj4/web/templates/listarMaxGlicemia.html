@@ -1,0 +1,30 @@
+<html>
+<title>List accounts - Flask</title>
+<body style="padding:20px">
+  <h3>Máximo de Glicémia</h3>
+  {% if cursor %}
+    <table border="2px">
+      <thead>
+        <tr>
+          <th>Concelho</th>
+          <th>Número do doente</th>
+          <th>Glicémia</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for record in cursor %}
+          <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p> Erro: ao obter dados da base de dados!</p>
+  {% endif %}
+</body>
+<header4> <b>Mínimo de Glicémia</b> </header4>
+<div class = "menu"><a href="listarMinGlicemia"> Ir para Mínimo de Glicémia (clicar aqui!) </a></div>
+</html>
